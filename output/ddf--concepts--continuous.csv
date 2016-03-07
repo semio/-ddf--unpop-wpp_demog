@@ -3,6 +3,7 @@ life_expectancy_at_birth_females,"Life expectancy at birth, females",measure,yea
 life_expectancy_at_birth_both_sexes_combined,"Life expectancy at birth, both sexes combined",measure,years
 under_five_mortality,Under-five mortality,measure,"deaths under age 5 per 1,000 live births"
 population_change,Population change,measure,thousands
+deaths,Deaths,measure,thousands
 total_fertility,Total fertility,measure,children per woman
 births,Births,measure,thousands
 population_growth_rate,Population growth rate,measure,percentage

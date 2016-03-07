@@ -55,7 +55,7 @@ def extract_concept_continuous(data):
     # headers
     headers = ['concept', 'name', 'concept_type', 'unit']
 
-    cont = data.columns[6:]
+    cont = data.columns[5:]
 
     # because the name and unit of the concept are both in the column name
     # we will seperate them.
@@ -93,7 +93,7 @@ def extract_datapoints_country_year(data):
     """extract data points by country and year"""
 
     # rename the columns to concept_id
-    cols = data.columns[6:]
+    cols = data.columns[5:]
     rename = {}
 
     for c in cols:
@@ -107,7 +107,7 @@ def extract_datapoints_country_year(data):
     # extract data for each concept
     res_dp = {}
 
-    for c in new_cols[6:]:
+    for c in new_cols[5:]:
         df = data[['country_code', 'reference_date_1_january_31_december', c, 'variant']]
         res_dp[c] = df
 
