@@ -4,15 +4,14 @@ Link: http://esa.un.org/unpd/wpp/Download/Standard/Interpolated/
 """
 
 import pandas as pd
-import numpy as np
 import re
 
 # configuration of file path
 source = '../source/WPP2015_INT_F01_ANNUAL_DEMOGRAPHIC_INDICATORS.XLS'
 out_dir = '../output'  # path for outputs
 
-# functions for building ddf files
 
+# functions for building ddf files
 def to_concept_id(s):
     '''convert a string to lowercase alphanumeric + underscore id for concepts'''
     s1 = re.sub(r'[/ -\.\*";]+', '_', s.strip())
