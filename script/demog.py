@@ -5,6 +5,7 @@ Link: http://esa.un.org/unpd/wpp/Download/Standard/Interpolated/
 
 import pandas as pd
 import re
+from index import create_index_file
 
 # configuration of file path
 source = '../source/WPP2015_INT_F01_ANNUAL_DEMOGRAPHIC_INDICATORS.XLS'
@@ -166,3 +167,7 @@ if __name__ == '__main__':
     print('creating notes files...')
     notes_df = extract_notes(data, notes)
     notes_df.to_csv(os.path.join(out_dir, 'ddf--notes.csv'), index=False, encoding='utf8')
+
+    print('generating index file...')
+    create_index_file(out_dir, os.path.join(out_dir, 'ddf--index.csv'))
+
