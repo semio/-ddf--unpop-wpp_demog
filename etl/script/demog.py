@@ -9,7 +9,7 @@ from index import create_index_file
 
 # configuration of file path
 source = '../source/WPP2015_INT_F01_ANNUAL_DEMOGRAPHIC_INDICATORS.XLS'
-out_dir = '../output'  # path for outputs
+out_dir = '../../'  # path for outputs
 
 
 # functions for building ddf files
