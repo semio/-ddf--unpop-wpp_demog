@@ -43,6 +43,12 @@ def extract_concept_discrete(data):
     dis_df['name'] = discrete
     dis_df['concept_type'] = ['string', 'string', 'string', 'entity domain', 'time']
 
+    # manually add more concept
+    to_add = pd.DataFrame([['name', 'Name', 'string'],
+                           ['unit', 'Unit', 'string']], columns=headers)
+
+    dis_df = dis_df.append(to_add)
+
     return dis_df
 
 
