@@ -1,4 +1,4 @@
-country_code,reference_date_1_january_31_december,life_expectancy_at_birth_females,variant
+country_code,year,life_expectancy_at_birth_females,variant
 900,1950,47.016,Estimates
 900,1951,47.375,Estimates
 900,1952,48.06,Estimates

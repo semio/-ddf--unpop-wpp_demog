@@ -1,4 +1,4 @@
-country_code,reference_date_1_january_31_december,life_expectancy_at_birth_both_sexes_combined,variant
+country_code,year,life_expectancy_at_birth_both_sexes_combined,variant
 900,1950,45.593,Estimates
 900,1951,45.925,Estimates
 900,1952,46.562,Estimates

@@ -1,4 +1,4 @@
-country_code,reference_date_1_january_31_december,crude_death_rate,variant
+country_code,year,crude_death_rate,variant
 900,1950,20.116,Estimates
 900,1951,19.879,Estimates
 900,1952,19.424,Estimates

@@ -1,4 +1,4 @@
-country_code,reference_date_1_january_31_december,crude_birth_rate,variant
+country_code,year,crude_birth_rate,variant
 900,1950,37.814,Estimates
 900,1951,37.549,Estimates
 900,1952,37.055,Estimates

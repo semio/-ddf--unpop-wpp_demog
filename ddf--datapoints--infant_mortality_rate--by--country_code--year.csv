@@ -1,4 +1,4 @@
-country_code,reference_date_1_january_31_december,infant_mortality_rate,variant
+country_code,year,infant_mortality_rate,variant
 900,1950,148.145,Estimates
 900,1951,146.404,Estimates
 900,1952,143.078,Estimates

@@ -1,4 +1,4 @@
-country_code,reference_date_1_january_31_december,total_survivors_to_age_1,variant
+country_code,year,total_survivors_to_age_1,variant
 900,1950,82420.256,Estimates
 900,1951,82638.106,Estimates
 900,1952,83170.01,Estimates

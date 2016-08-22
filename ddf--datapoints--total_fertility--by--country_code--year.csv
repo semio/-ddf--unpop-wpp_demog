@@ -1,4 +1,4 @@
-country_code,reference_date_1_january_31_december,total_fertility,variant
+country_code,year,total_fertility,variant
 900,1950,5.042,Estimates
 900,1951,5.016,Estimates
 900,1952,4.971,Estimates

@@ -49,6 +49,9 @@ def extract_concept_discrete(data):
 
     dis_df = dis_df.append(to_add)
 
+    # rename reference_date_1_january_31_december to year
+    dis_df.loc[dis_df.concept == 'reference_date_1_january_31_december', 'concept'] = 'year'
+
     return dis_df
 
 
@@ -115,7 +118,7 @@ def extract_datapoints_country_year(data):
 
     for c in new_cols[5:]:
         df = data[['country_code', 'reference_date_1_january_31_december', c, 'variant']]
-        res_dp[c] = df
+        res_dp[c] = df.rename(columns={'reference_date_1_january_31_december': 'year'})
 
     return res_dp
 
