@@ -2,7 +2,7 @@ concept,name,concept_type
 variant,Variant,string
 major_area_region_country_or_area,"Major area, region, country or area *",string
 notes,Notes,string
-country_code,Country code,entity domain
+country_code,Country code,entity_domain
 year,Reference date (1 January - 31 December),time
 name,Name,string
 unit,Unit,string
