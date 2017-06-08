@@ -1,20 +1,20 @@
 concept,name,concept_type,unit
-infant_deaths_both_sexes_combined,"Infant deaths, both sexes combined",measure,"under age 1, thousands"
-population_growth_rate,Population growth rate,measure,percentage
+deaths,Deaths,measure,thousands
 male_deaths,Male deaths,measure,thousands
 female_deaths,Female deaths,measure,thousands
-under_five_mortality,Under-five mortality,measure,"deaths under age 5 per 1,000 live births"
+crude_death_rate,Crude death rate,measure,"deaths per 1,000 population"
+life_expectancy_at_birth_both_sexes_combined,"Life expectancy at birth, both sexes combined",measure,years
+life_expectancy_at_birth_males,"Life expectancy at birth, males",measure,years
 life_expectancy_at_birth_females,"Life expectancy at birth, females",measure,years
-total_population_annual_doubling_time,Total population annual doubling time [n=(ln(2)/r],measure,years
+infant_deaths_both_sexes_combined,"Infant deaths, both sexes combined",measure,"under age 1, thousands"
 infant_mortality_rate,Infant mortality rate,measure,"infant deaths per 1,000 live births"
 total_survivors_to_age_1,Total survivors to age 1,measure,thousands
-life_expectancy_at_birth_both_sexes_combined,"Life expectancy at birth, both sexes combined",measure,years
-crude_death_rate,Crude death rate,measure,"deaths per 1,000 population"
-deaths,Deaths,measure,thousands
-rate_of_natural_increase,Rate of natural increase,measure,"per 1,000 population"
-life_expectancy_at_birth_males,"Life expectancy at birth, males",measure,years
-total_population_natural_change_increase,Total population natural change / increase,measure,thousands
-crude_birth_rate,Crude birth rate,measure,"births per 1,000 population"
+under_five_mortality,Under-five mortality,measure,"deaths under age 5 per 1,000 live births"
 births,Births,measure,thousands
-population_change,Population change,measure,thousands
+crude_birth_rate,Crude birth rate,measure,"births per 1,000 population"
 total_fertility,Total fertility,measure,children per woman
+total_population_natural_change_increase,Total population natural change / increase,measure,thousands
+rate_of_natural_increase,Rate of natural increase,measure,"per 1,000 population"
+population_change,Population change,measure,thousands
+population_growth_rate,Population growth rate,measure,percentage
+total_population_annual_doubling_time,Total population annual doubling time [n=(ln(2)/r],measure,years

@@ -380,6 +380,27 @@
             }
         },
         {
+            "path": "ddf--datapoints--total_population_annual_doubling_time_n_ln_2_r--by--country_code--year.csv",
+            "name": "ddf--datapoints--total_population_annual_doubling_time_n_ln_2_r--by--country_code--year",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "country_code"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "total_population_annual_doubling_time_n_ln_2_r"
+                    }
+                ],
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ]
+            }
+        },
+        {
             "path": "ddf--datapoints--total_population_natural_change_increase--by--country_code--year.csv",
             "name": "ddf--datapoints--total_population_natural_change_increase--by--country_code--year",
             "schema": {
@@ -457,5 +478,251 @@
                 "primaryKey": "country_code"
             }
         }
-    ]
+    ],
+    "ddfSchema": {
+        "concepts": [
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "unit",
+                "resources": [
+                    "ddf--concepts--continuous"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--concepts--continuous",
+                    "ddf--concepts--discrete"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "concept_type",
+                "resources": [
+                    "ddf--concepts--continuous",
+                    "ddf--concepts--discrete"
+                ]
+            }
+        ],
+        "entities": [
+            {
+                "primaryKey": [
+                    "country_code"
+                ],
+                "value": "major_area_region_country_or_area",
+                "resources": [
+                    "ddf--entities--country_code"
+                ]
+            }
+        ],
+        "datapoints": [
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "births",
+                "resources": [
+                    "ddf--datapoints--births--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "crude_birth_rate",
+                "resources": [
+                    "ddf--datapoints--crude_birth_rate--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "crude_death_rate",
+                "resources": [
+                    "ddf--datapoints--crude_death_rate--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "deaths",
+                "resources": [
+                    "ddf--datapoints--deaths--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "female_deaths",
+                "resources": [
+                    "ddf--datapoints--female_deaths--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "infant_deaths_both_sexes_combined",
+                "resources": [
+                    "ddf--datapoints--infant_deaths_both_sexes_combined--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "infant_mortality_rate",
+                "resources": [
+                    "ddf--datapoints--infant_mortality_rate--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "life_expectancy_at_birth_both_sexes_combined",
+                "resources": [
+                    "ddf--datapoints--life_expectancy_at_birth_both_sexes_combined--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "life_expectancy_at_birth_females",
+                "resources": [
+                    "ddf--datapoints--life_expectancy_at_birth_females--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "life_expectancy_at_birth_males",
+                "resources": [
+                    "ddf--datapoints--life_expectancy_at_birth_males--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "male_deaths",
+                "resources": [
+                    "ddf--datapoints--male_deaths--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "population_change",
+                "resources": [
+                    "ddf--datapoints--population_change--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "population_growth_rate",
+                "resources": [
+                    "ddf--datapoints--population_growth_rate--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "rate_of_natural_increase",
+                "resources": [
+                    "ddf--datapoints--rate_of_natural_increase--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "total_fertility",
+                "resources": [
+                    "ddf--datapoints--total_fertility--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "total_population_annual_doubling_time",
+                "resources": [
+                    "ddf--datapoints--total_population_annual_doubling_time--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "total_population_annual_doubling_time_n_ln_2_r",
+                "resources": [
+                    "ddf--datapoints--total_population_annual_doubling_time_n_ln_2_r--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "total_population_natural_change_increase",
+                "resources": [
+                    "ddf--datapoints--total_population_natural_change_increase--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "total_survivors_to_age_1",
+                "resources": [
+                    "ddf--datapoints--total_survivors_to_age_1--by--country_code--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "country_code",
+                    "year"
+                ],
+                "value": "under_five_mortality",
+                "resources": [
+                    "ddf--datapoints--under_five_mortality--by--country_code--year"
+                ]
+            }
+        ]
+    }
 }
