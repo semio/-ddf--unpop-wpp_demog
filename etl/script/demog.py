@@ -5,7 +5,8 @@ Link: http://esa.un.org/unpd/wpp/Download/Standard/Interpolated/
 
 import pandas as pd
 import re
-from index import create_index_file
+import os
+from ddf_utils.datapackage import get_datapackage, dump_json
 
 # configuration of file path
 source = '../source/WPP2015_INT_F01_ANNUAL_DEMOGRAPHIC_INDICATORS.XLS'
@@ -123,31 +124,29 @@ def extract_datapoints_country_year(data):
     return res_dp
 
 
-def extract_notes(data, notes):
-    """extract the notes from source data"""
+# def extract_notes(data, notes):
+#     """extract the notes from source data"""
 
-    headers = ['country_code', 'variant', 'notes']
+#     headers = ['country_code', 'variant', 'notes']
 
-    # first get the notes id and contents
-    res_notes = {}
+#     # first get the notes id and contents
+#     res_notes = {}
 
-    for n in notes['Notes']:
-        g1, g2 = re.match(r'\((.{1,2})\) * (.*)', n).groups()
-        res_notes[g1] = g2
+#     for n in notes['Notes']:
+#         g1, g2 = re.match(r'\((.{1,2})\) * (.*)', n).groups()
+#         res_notes[g1] = g2
 
-    df = data.set_index('Country code')
-    df = df[['Variant', 'Notes']].dropna().drop_duplicates()
+#     df = data.set_index('Country code')
+#     df = df[['Variant', 'Notes']].dropna().drop_duplicates()
 
-    df['Notes'] = df['Notes'].apply(lambda x: res_notes[str(x)])
-    df = df.reset_index()
-    df.columns = headers
+#     df['Notes'] = df['Notes'].apply(lambda x: res_notes[str(x)])
+#     df = df.reset_index()
+#     df.columns = headers
 
-    return df
+#     return df
 
 
 if __name__ == '__main__':
-    import os
-
     print('reading source files...')
     est = pd.read_excel(source, sheetname='ESTIMATES', skiprows=16, index_col=0)
     mva = pd.read_excel(source, sheetname='MEDIUM VARIANT', skiprows=16, index_col=0)
@@ -155,8 +154,10 @@ if __name__ == '__main__':
 
     print('creating concepts ddf files...')
     discrete = extract_concept_discrete(est)
-    discrete.to_csv(os.path.join(out_dir, 'ddf--concepts--discrete.csv'),
-                    index=False)
+    # remove the variant concept
+    discrete = discrete.set_index('concept').drop('variant')
+    discrete.to_csv(os.path.join(out_dir, 'ddf--concepts--discrete.csv'))
+
     continuous = extract_concept_continuous(est)
     continuous.to_csv(os.path.join(out_dir, 'ddf--concepts--continuous.csv'),
                       index=False)
@@ -170,13 +171,15 @@ if __name__ == '__main__':
     data = pd.concat([est, mva])
     res = extract_datapoints_country_year(data)
     for c, df in res.items():
+        df = df.drop(['variant'], axis=1)
+        # if there are many variants, use last one.
+        df = df.groupby(['country_code', 'year']).last()
         path = os.path.join(out_dir, 'ddf--datapoints--'+c+'--by--country_code--year.csv')
-        df.to_csv(path, index=False)
+        df.to_csv(path)
 
-    print('creating notes files...')
-    notes_df = extract_notes(data, notes)
-    notes_df.to_csv(os.path.join(out_dir, 'ddf--notes.csv'), index=False, encoding='utf8')
+    # print('creating notes files...')
+    # notes_df = extract_notes(data, notes)
+    # notes_df.to_csv(os.path.join(out_dir, 'ddf--notes.csv'), index=False, encoding='utf8')
 
-    print('generating index file...')
-    create_index_file(out_dir, os.path.join(out_dir, 'ddf--index.csv'))
-
+    print('generating datapackage file...')
+    dump_json(os.path.join(out_dir, 'datapackage.json'), get_datapackage(out_dir))
